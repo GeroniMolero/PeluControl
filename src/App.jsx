@@ -10,6 +10,9 @@ function App() {
       <h1>PeluControl - Clientes</h1>
       {/*Paso el array de clientes iniciales como prop*/}
       <ControladorLista clientes={clientesIniciales} />
+      <footer className="footer">
+        Peluquería de Gerónimo Molero Rodríguez
+      </footer>
     </div>
   );
 }
