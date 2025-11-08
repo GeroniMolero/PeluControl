@@ -1,7 +1,10 @@
 .lista{
     ul{
         list-style-type: none;
-        padding-left: 20%;
+        padding-left: 22%;
         text-align: justify;
+    }
+    li{
+        margin-bottom: 10px;
     }
 }
