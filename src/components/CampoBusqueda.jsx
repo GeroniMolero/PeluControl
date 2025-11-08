@@ -1,23 +1,32 @@
-import React, { useState } from "react";
-import ListaClientes from "./ListaClientes";
+import React from "react";
 
-export default function CampoBusqueda({ clientes }) {
-  const [busqueda, setBusqueda] = useState("");
-  const clientesFiltrados = clientes.filter(
-    (c) =>
-      c.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
-      c.telefono.includes(busqueda)
-  );
-
+export default function CampoBusqueda({
+  busqueda,
+  setBusqueda,
+  orden,
+  setOrden,
+  ascendente,
+  setAscendente,
+}) {
   return (
     <div>
       <input
         type="text"
-        placeholder="Buscar por nombre o teléfono"
+        placeholder="Buscar por nombre o teléfono..."
         value={busqueda}
         onChange={(e) => setBusqueda(e.target.value)}
       />
-      <ListaClientes clientes={clientesFiltrados} />
+
+      <div style={{ marginBottom: "10px" }}>
+        <label>Ordenar por: </label>
+        <select value={orden} onChange={(e) => setOrden(e.target.value)}>
+          <option value="nombre">Nombre</option>
+          <option value="telefono">Teléfono</option>
+        </select>
+        <button onClick={() => setAscendente(!ascendente)}>
+          {ascendente ? "Ascendente" : "Descendente"}
+        </button>
+      </div>
     </div>
   );
 }
