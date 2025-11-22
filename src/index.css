@@ -91,8 +91,8 @@ button:focus-visible {
     padding: 15px;
     top: 10px;
     left: 10px;
-    width: 100%; /* Asegura que el panel ocupe el ancho completo */
-    position: absolute; /* Panel fijo en la parte superior */
+    width: 90%;
+    position: absolute;
     border-radius: 10px;
   }
 

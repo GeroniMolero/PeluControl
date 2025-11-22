@@ -1,17 +1,16 @@
-/* PanelControl.css */
 .panel-control {
-  position: fixed; /* Fija el panel en la pantalla */
-  top: 20px; /* Ajusta la distancia desde la parte superior */
-  left: 20px; /* Ajusta la distancia desde la parte izquierda */
+  position: fixed;
+  top: 20px;
+  left: 20px;
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
   border: 1px solid #ccc;
   display: flex;
-  flex-direction: column; /* Alinea los botones verticalmente */
+  flex-direction: column;
   gap: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 10; /* Asegura que el panel esté por encima del contenido */
+  z-index: 10;
 }
 
 .panel-control button {
@@ -35,4 +34,28 @@
 
 .panel-control .botonError:hover {
   background-color: #c82333;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+  .panel-control {
+    display: none;
+    top: 0;
+    left: auto;
+    right: 0;
+    width: 100%;
+    height: 20%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .panel-control h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .panel-control button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
 }

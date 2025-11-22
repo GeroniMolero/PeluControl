@@ -1,13 +1,12 @@
-/* Aseguramos que el contenedor raíz ocupe el 100% del alto de la pantalla */
 #root {
   display: flex;
-  flex-direction: column; /* Los elementos se apilan verticalmente */
-  justify-content: space-between; /* Asegura que los elementos estén distribuidos */
-  height: 100vh; /* Ocupa todo el alto de la ventana */
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
   margin: 0 auto;
-  padding: 0 2rem; /* Ajusta el padding en los laterales */
+  padding: 0 2rem;
   text-align: center;
-  border: 5px solid #640fb3;
+  border: 5px solid #0f7fb3;
   border-radius: 12px;
   background-image: url('/src/assets/images/papel.avif');
   background-repeat: no-repeat;
@@ -52,12 +51,10 @@
   color: #888;
 }
 
-/* Para el footer, que debe estar al final de la página sin moverse */
 footer {
   padding: 1em;
   color: #858080;
   font-size: 0.8rem;
-  margin-top: auto; /* Asegura que el footer se quede en el fondo */
 }
 
 .error {

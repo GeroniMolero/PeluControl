@@ -1,12 +1,11 @@
-/* CampoBusqueda.css */
 .campo-busqueda {
-  width: 50%; /* Ancho fijo para pantallas grandes */
+  width: 50%;
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
-  transition: all 0.3s ease; /* Añadido para transiciones suaves */
+  transition: all 0.3s ease;
 }
 
 .campo-busqueda:focus {
