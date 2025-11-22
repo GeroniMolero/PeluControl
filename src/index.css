@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -30,11 +33,15 @@ body {
   background-image: url('/src/assets/images/background.avif');
   background-repeat: no-repeat;
   background-size: cover;
+  justify-content: center; /* Centra todo el contenido */
+  align-items: center;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 button {
@@ -48,23 +55,84 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* Estilos para dispositivos con color preferido "light" */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Estilos específicos para dispositivos con pantalla más pequeña (móviles) */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .panel-control {
+    padding: 15px;
+    top: 10px;
+    left: 10px;
+    width: 100%; /* Asegura que el panel ocupe el ancho completo */
+    position: absolute; /* Panel fijo en la parte superior */
+    border-radius: 10px;
+  }
+
+  button {
+    font-size: 0.9em;
+    padding: 0.8em 1.2em;
+  }
+
+  .error {
+    font-size: 1.2em;
+  }
+}
+
+/* Estilos para tablets y pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  h1 {
+    font-size: 2.5em;
+  }
+
+  .panel-control {
+    padding: 20px;
+    top: 20px;
+    left: 20px;
+    width: 300px; /* Tamaño fijo para el panel de control */
+    position: fixed;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 1em 1.5em;
+  }
+}
+
+/* Estilos para pantallas grandes (desktop y superiores) */
+@media (min-width: 1025px) {
+  h1 {
+    font-size: 3.2em;
+  }
+
+  .panel-control {
+    width: 250px; /* Ajusta el tamaño del panel en escritorios */
   }
 }

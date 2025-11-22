@@ -1,10 +1,39 @@
-.lista{
-    ul{
-        list-style-type: none;
-        padding-left: 22%;
-        text-align: justify;
-    }
-    li{
-        margin-bottom: 10px;
-    }
+.lista {
+  width: 80%;
+  margin: 10% auto;
+  padding: 0 20px;
+  max-height: 450px;
+  min-height: 450px;    
+  overflow-y: auto;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255);
+}
+
+.lista h2 {
+  position: sticky;
+  top: 0;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #333;
+  background-color: rgba(255, 255, 255);
+  padding: 5px;
+  z-index: 1;
+}
+
+.lista ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1em;
+}
+
+.lista li:last-child {
+  border-bottom: none;
 }

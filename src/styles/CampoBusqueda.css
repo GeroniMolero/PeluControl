@@ -1,10 +1,12 @@
+/* CampoBusqueda.css */
 .campo-busqueda {
-  width: 50%;
+  width: 50%; /* Ancho fijo para pantallas grandes */
   padding: 10px;
   margin-bottom: 20px;
   font-size: 16px;
   border: 2px solid #ccc;
   border-radius: 4px;
+  transition: all 0.3s ease; /* Añadido para transiciones suaves */
 }
 
 .campo-busqueda:focus {
@@ -18,3 +20,29 @@
   box-shadow: 0 0 5px rgba(83, 91, 242, 0.5);
 }
 
+/* Responsive: Pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .campo-busqueda {
+    width: 90%; /* En móviles, el campo de búsqueda ocupa el 90% del ancho */
+    font-size: 14px; /* Reducir el tamaño de fuente para pantallas pequeñas */
+    margin-bottom: 15px; /* Reducir el margen en dispositivos pequeños */
+  }
+}
+
+/* Responsive: Pantallas medianas (tabletas) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .campo-busqueda {
+    width: 70%; /* Ajusta el campo a un 70% en tabletas */
+    font-size: 15px; /* Tamaño de fuente un poco mayor que en móviles */
+    margin-bottom: 18px; /* Margen adecuado para tabletas */
+  }
+}
+
+/* Responsive: Pantallas grandes (escritorios) */
+@media (min-width: 1025px) {
+  .campo-busqueda {
+    width: 50%; /* Ancho fijo de 50% en pantallas grandes */
+    font-size: 16px; /* Tamaño de fuente predeterminado */
+    margin-bottom: 20px;
+  }
+}

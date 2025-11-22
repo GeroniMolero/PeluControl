@@ -1,7 +1,11 @@
+/* Aseguramos que el contenedor raíz ocupe el 100% del alto de la pantalla */
 #root {
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column; /* Los elementos se apilan verticalmente */
+  justify-content: space-between; /* Asegura que los elementos estén distribuidos */
+  height: 100vh; /* Ocupa todo el alto de la ventana */
   margin: 0 auto;
-  padding: 5rem;
+  padding: 0 2rem; /* Ajusta el padding en los laterales */
   text-align: center;
   border: 5px solid #640fb3;
   border-radius: 12px;
@@ -16,9 +20,11 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
@@ -46,9 +52,15 @@
   color: #888;
 }
 
-footer{
-  padding: 5em 0 0 0;
+/* Para el footer, que debe estar al final de la página sin moverse */
+footer {
+  padding: 1em;
   color: #858080;
   font-size: 0.8rem;
+  margin-top: auto; /* Asegura que el footer se quede en el fondo */
 }
 
+.error {
+  color: red;
+  margin: 20%;
+}
