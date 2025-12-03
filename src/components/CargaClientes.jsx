@@ -1,7 +1,7 @@
 import React from 'react';
 import ControladorLista from './ControladorLista';
 
-export default function CargaClientes ({ cargando, error, clientes }){
+export default function CargaClientes ({ cargando, error, clientes, onAddCliente }) {
   if (cargando) {
     return <div>Cargando clientes...</div>;
   }
@@ -10,5 +10,5 @@ export default function CargaClientes ({ cargando, error, clientes }){
     return <div className="error">{error}</div>;
   }
 
-  return <ControladorLista clientes={clientes} />;
+  return <ControladorLista clientes={clientes} onAddCliente={onAddCliente} />;
 };

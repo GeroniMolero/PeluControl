@@ -28,6 +28,12 @@ function App() {
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
 
+
+  const handleAddCliente = (nuevoCliente) => {
+    const clienteConId = { ...nuevoCliente, id: Date.now() };
+    setClientes([...clientes, clienteConId]);
+  };
+
   const cargarDatos = () => {
     const falloDeCarga = Math.random() < 0.2;
     
@@ -69,7 +75,7 @@ function App() {
       <h1>PeluControl - Clientes</h1>
 
       {/* Componente que maneja la carga de datos, errores y muestra los clientes */}
-      <CargaClientes cargando={cargando} error={error} clientes={clientes} />
+      <CargaClientes cargando={cargando} error={error} clientes={clientes} onAddCliente={handleAddCliente}/>
 
       {/* Panel para manejar errores y recargar los datos */}
       <PanelControl toggleError={toggleError} reintentarCarga={reintentarCarga} error={error} />

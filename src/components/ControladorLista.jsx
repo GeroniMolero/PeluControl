@@ -3,7 +3,7 @@ import CampoBusqueda from "./CampoBusqueda";
 import ListaClientes from "./ListaClientes";
 import Paginacion from "./Paginacion";
 
-export default function ControladorLista({ clientes }) {
+export default function ControladorLista({ clientes, onAddCliente }) {
   // Estados principales del componente
   const [busqueda, setBusqueda] = useState(""); // Guarda el texto introducido en el campo de búsqueda
   const [orden, setOrden] = useState("nombre"); // Criterio de ordenamiento (nombre o teléfono)
@@ -65,7 +65,7 @@ export default function ControladorLista({ clientes }) {
       />
 
       {/* Lista de clientes mostrada según el filtrado, orden y paginación */}
-      <ListaClientes clientes={clientesPaginados} />
+      <ListaClientes clientes={clientesPaginados} onAddCliente={onAddCliente}/>
 
       {/* Controles de paginación y selección de resultados por página */}
       <Paginacion
