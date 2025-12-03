@@ -46,5 +46,4 @@ Abren su formulario correspondiente, que controla ciertas condiciones:
     Proporciona el estado de los valores del formulario,
     una función para manejar cambios en los campos
     y una función para resetear el formulario a su estado inicial.
- */
    
