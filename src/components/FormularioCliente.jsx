@@ -6,11 +6,13 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import '../styles/FormularioCliente.css';
 
 const clienteSchema = yup.object().shape({
-  nombre: yup.string().required('El nombre es obligatorio'),
+  nombre: yup.string().required('El nombre es obligatorio')
+  .max(50, 'El nombre no puede tener más de 50 caracteres'),
   telefono: yup
     .string()
     .matches(/^[0-9]+$/, 'El teléfono debe contener solo números')
     .min(9, 'El teléfono debe tener al menos 9 dígitos')
+    .max(12, 'El teléfono no puede tener más de 12 dígitos')
     .required('El teléfono es obligatorio'),
 });
 
