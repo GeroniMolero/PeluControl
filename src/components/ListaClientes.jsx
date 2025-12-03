@@ -28,7 +28,7 @@ export default function ListaClientes({ clientes, onAddCliente, onUpdateCliente 
 
   return (
     <div>
-    {/* --- BOTÓN PARA AÑADIR CLIENTE --- */}
+    {/* Botón para añadir cliente */}
       {!mostrarFormularioCrear && !clienteEditando && (
         <button 
           className="boton-añadir" 
@@ -39,7 +39,7 @@ export default function ListaClientes({ clientes, onAddCliente, onUpdateCliente 
       )}
     <div className="lista">
       <h2>Lista de Clientes</h2>
-      {/* Formulario para CREAR */}
+      {/* Formulario para crear */}
       {mostrarFormularioCrear && (
         <FormularioCliente
           key="form-crear" // Key para forzar re-montaje y limpiar estado
@@ -51,7 +51,7 @@ export default function ListaClientes({ clientes, onAddCliente, onUpdateCliente 
           textoBoton="Añadir Cliente"
         />
       )}
-      {/* Formulario para EDITAR */}
+      {/* Formulario para editar */}
       {clienteEditando && (
         <FormularioCliente
           key={`form-editar-${clienteEditando.id}`} // Key única para cada edición
@@ -70,7 +70,7 @@ export default function ListaClientes({ clientes, onAddCliente, onUpdateCliente 
           {clientes.map((cliente) => (
             <li key={cliente.id} className="cliente-item">
               <span>{cliente.nombre} - Teléfono: {cliente.telefono}</span>
-              {/* Nuevo botón de editar */}
+              {/* Botón para editar cliente */}
               <button onClick={() => handleEditar(cliente)} className="boton-editar">
                 Editar
               </button>

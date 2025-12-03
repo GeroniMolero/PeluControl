@@ -36,7 +36,7 @@ export default function FormularioCliente({
     // Función que se ejecuta cuando el formulario es válido y se envía
     const manejarEnvio = (data) => {
         onSubmit(data);
-        reset(); // Limpiamos el formulario tras guardar
+        reset();
     };
 
 //   // Uso el hook para el estado del formulario
