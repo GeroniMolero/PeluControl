@@ -39,13 +39,12 @@ Abren su formulario correspondiente, que controla ciertas condiciones:
     3. El teléfono debe contener solo números
     4. El teléfono debe tener al menos 9 dígitos y máximo 12.
 
-## Añado un archivo useForm
+## Hook useForm (/src/hooks/useForm.js)
 
-**
- * Alternativa para useForm de React Hook Form por si falla.
- * Custom hook para manejar formularios.
- * Proporciona el estado de los valores del formulario,
- * una función para manejar cambios en los campos
- * y una función para resetear el formulario a su estado inicial.
+    Alternativa para useForm de React Hook Form por si falla.
+    Custom hook para manejar formularios.
+    Proporciona el estado de los valores del formulario,
+    una función para manejar cambios en los campos
+    y una función para resetear el formulario a su estado inicial.
  */
    
