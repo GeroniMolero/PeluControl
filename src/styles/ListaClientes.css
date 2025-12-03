@@ -1,9 +1,9 @@
 .lista {
-  width: 80%;
-  margin: 10% auto;
+  width: 90%;
+  margin: 5% auto;
   padding: 0 20px;
   max-height: 450px;
-  min-height: 450px;    
+  min-height: 450px;   
   overflow-y: auto;
   border: 2px solid #ccc;
   border-radius: 10px;
@@ -40,9 +40,37 @@
 
 .boton-añadir{
   padding: 10px 15px;
+  margin: 5% 0 0 0;
   background-color: #28a745;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.cliente-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.cliente-item span {
+  flex-grow: 1;
+}
+
+.boton-editar {
+  margin-left: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  color: white;
+  background-color: #ffc107; /* Amarillo */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.boton-editar:hover {
+  background-color: #e0a800;
 }

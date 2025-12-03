@@ -17,7 +17,8 @@ const clienteSchema = yup.object().shape({
 export default function FormularioCliente({ 
   onSubmit, 
   onCancel,
-  textoBoton = "Guardar Cliente"
+  textoBoton = "Guardar Cliente",
+  initialValues = null
 }) {
 
     const {
@@ -27,7 +28,7 @@ export default function FormularioCliente({
         reset,
     } = useForm({
         resolver: yupResolver(clienteSchema),
-        defaultValues: { nombre: '', telefono: '' } // Valores iniciales
+        defaultValues: initialValues || { nombre: '', telefono: '' } // Valores iniciales
     });
 
     // Función que se ejecuta cuando el formulario es válido y se envía

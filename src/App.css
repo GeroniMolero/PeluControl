@@ -11,6 +11,7 @@
   background-image: url('/src/assets/images/papel.avif');
   background-repeat: no-repeat;
   background-size: cover;
+  max-width: 100%;
 }
 
 .logo {

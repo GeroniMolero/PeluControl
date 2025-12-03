@@ -3,44 +3,77 @@ import FormularioCliente from "./FormularioCliente";
 import "../styles/ListaClientes.css";
 
 // Componente que muestra la lista de clientes
-export default function ListaClientes({ clientes, onAddCliente }) {
-  const [mostrarFormulario, setMostrarFormulario] = useState(false);
+export default function ListaClientes({ clientes, onAddCliente, onUpdateCliente }) {
+  const [mostrarFormularioCrear, setMostrarFormularioCrear] = useState(false);
+  const [clienteEditando, setClienteEditando] = useState(null);
+
+  const handleEditar = (cliente) => {
+    setClienteEditando(cliente);
+    setMostrarFormularioCrear(false); // Aseguramos que solo un formulario esté visible
+  };
+
+  const handleCancelarEdicion = () => {
+    setClienteEditando(null);
+  };
+
+  const handleCancelarCreacion = () => {
+    setMostrarFormularioCrear(false);
+  };
+
   const initialValues = useMemo(() => ({ nombre: "", telefono: "" }), []);
   //Control para el caso en que no haya clientes que mostrar
-  if (clientes.length === 0) {
+  if (clientes.length === 0 && !mostrarFormularioCrear && !clienteEditando) {
     return <p>No se encontraron resultados.</p>;
   }
 
   return (
     <div>
     {/* --- BOTÓN PARA AÑADIR CLIENTE --- */}
-      {!mostrarFormulario && (
+      {!mostrarFormularioCrear && !clienteEditando && (
         <button 
           className="boton-añadir" 
-          onClick={() => setMostrarFormulario(true)}
+          onClick={() => setMostrarFormularioCrear(true)}
         >
           Añadir cliente
         </button>
       )}
     <div className="lista">
       <h2>Lista de Clientes</h2>
-      {/* --- FORMULARIO CONDICIONAL --- */}
-      {mostrarFormulario && (
+      {/* Formulario para CREAR */}
+      {mostrarFormularioCrear && (
         <FormularioCliente
-          // initialValues={initialValues}
+          key="form-crear" // Key para forzar re-montaje y limpiar estado
           onSubmit={(nuevoCliente) => {
             onAddCliente(nuevoCliente);
-            setMostrarFormulario(false); // Oculta el formulario tras añadir el cliente
+            setMostrarFormularioCrear(false);
           }}
-          onCancel={() => setMostrarFormulario(false)} // Oculta el formulario al cancelar
+          onCancel={handleCancelarCreacion}
+          textoBoton="Añadir Cliente"
         />
       )}
-      {/* La lista solo se muestra si el formulario no está activo */}
-      {!mostrarFormulario && (
+      {/* Formulario para EDITAR */}
+      {clienteEditando && (
+        <FormularioCliente
+          key={`form-editar-${clienteEditando.id}`} // Key única para cada edición
+          initialValues={clienteEditando} // Pasamos los datos del cliente a editar
+          onSubmit={(clienteActualizado) => {
+            onUpdateCliente(clienteActualizado);
+            setClienteEditando(null);
+          }}
+          onCancel={handleCancelarEdicion}
+          textoBoton="Actualizar Cliente"
+        />
+      )}
+      {/* La lista solo se muestra si ningún formulario está activo */}
+      {!mostrarFormularioCrear && !clienteEditando && (
         <ul>
           {clientes.map((cliente) => (
-            <li key={cliente.id}>
-              {cliente.nombre} - Teléfono: {cliente.telefono}
+            <li key={cliente.id} className="cliente-item">
+              <span>{cliente.nombre} - Teléfono: {cliente.telefono}</span>
+              {/* Nuevo botón de editar */}
+              <button onClick={() => handleEditar(cliente)} className="boton-editar">
+                Editar
+              </button>
             </li>
           ))}
         </ul>
