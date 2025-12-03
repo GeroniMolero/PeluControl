@@ -30,3 +30,22 @@ Boton Azul
     
     Alternativa a recargar la página por si la funcion cargarDatos ha generado un error al montarse App.
 
+## Botones para editar y añadir clientes
+
+Abren su formulario correspondiente, que controla ciertas condiciones:
+
+    1. Nombre y telefono requeridos
+    2. El nombre no puede tener más de 50 caracteres
+    3. El teléfono debe contener solo números
+    4. El teléfono debe tener al menos 9 dígitos y máximo 12.
+
+## Añado un archivo useForm
+
+**
+ * Alternativa para useForm de React Hook Form por si falla.
+ * Custom hook para manejar formularios.
+ * Proporciona el estado de los valores del formulario,
+ * una función para manejar cambios en los campos
+ * y una función para resetear el formulario a su estado inicial.
+ */
+   
